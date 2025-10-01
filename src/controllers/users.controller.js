@@ -7,7 +7,7 @@ let users = [
     createdAt: new Date().toISOString()
   }
 ];
-
+  
 // Obtener todos los usuarios con filtros
 const getUsers = (req, res) => {
   const { role, search } = req.query; // extraemos filtros de la query
