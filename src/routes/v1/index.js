@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Importar rutas de usuarios
 const usersRoutes = require("./users.routes");
+const workoutsRoutes = require("./workouts.routes");
 
-// Montar rutas
 router.use("/users", usersRoutes);
+router.use("/workouts", workoutsRoutes);
 
 module.exports = router;
