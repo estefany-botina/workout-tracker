@@ -7,8 +7,8 @@ const routes = require("./routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Rutas principales (se delega al index de routes)
-app.use("/", routes);
+// Aquí se monta todo el API
+app.use("/api", routes);
 
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
