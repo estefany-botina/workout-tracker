@@ -1,21 +1,21 @@
 const express = require("express");
+const app = express();
 const { port } = require("./config/env");
+
 const routes = require("./routes");
 
-const app = express();
-
-// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ruta raíz
-app.get("/", (req, res) => {
-  res.send("Hola mi server en Express");
-});
+// Rutas principales (se delega al index de routes)
+app.use("/", routes);
 
-// Prefijo API
-app.use("/api", routes);
+app.get("/", (req, res) => {
+  res.send("API funcionando 🚀");
+});
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
+module.exports = app;

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {
+const { 
   getUsers,
   getUserById,
   createUser,
@@ -9,22 +9,12 @@ const {
   deleteUser
 } = require("../../controllers/users.controller");
 
-// GET /api/v1/users
+// Rutas para /api/v1/users
 router.get("/", getUsers);
-
-// GET /api/v1/users/:id
-router.get("/:id", getUserById);
-
-// POST /api/v1/users
 router.post("/", createUser);
-
-// PUT /api/v1/users/:id
+router.get("/:id", getUserById);
 router.put("/:id", updateUser);
-
-// PATCH /api/v1/users/:id
 router.patch("/:id", patchUser);
-
-// DELETE /api/v1/users/:id
 router.delete("/:id", deleteUser);
 
 module.exports = router;
